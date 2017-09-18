@@ -8,7 +8,7 @@
   },
   "author": "husain",
   "license": "ISC",
-  "devDependencies": {
+  "Dependencies": {
     "openssl-self-signed-certificate":"^1.1.6",
     "q":"^1.5.0",
     "ip":"^1.1.5",
