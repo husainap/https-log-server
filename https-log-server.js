@@ -144,14 +144,6 @@ var sslOptions = {
     key: selfSigned.key,
     cert: selfSigned.cert
 };
-var sslOptions1 = {
-  key: fs.readFileSync('key.pem'),
-  cert: fs.readFileSync('cert.pem'),
-  passphrase: 'root'
-};
-
-console.log('sslOptions1.key ',sslOptions1.key);
-console.log('sslOptions1.cert ',sslOptions1.cert);
 
 var httpsServer = https.createServer(sslOptions, app);
 httpsServer.listen(options.port);
