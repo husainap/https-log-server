@@ -1,5 +1,5 @@
 {
-  "name": "logserver",
+  "name": "https-log-server",
   "version": "1.0.0",
   "description": "log server for saving POST messages(console log) from browser console",
   "main": "https-log-server.js",
