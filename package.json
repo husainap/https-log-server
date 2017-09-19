@@ -1,6 +1,6 @@
 {
   "name": "https-log-server",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "log server for saving POST messages(console log) from browser console",
   "main": "https-log-server.js",
   "bin": {
@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "openssl-self-signed-certificate":"^1.1.6",
-    "q":"1.5.0",
+    //"q":"1.5.0",
     "ip":"1.1.5",
     "lodash":"4.17.4",
     "colors":"1.1.2",

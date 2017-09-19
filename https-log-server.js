@@ -87,7 +87,7 @@ var bodyParser  = require('body-parser');
 var path        = require('path');
 var serveIndex  = require('serve-index');
 var serveStatic = require('serve-static');
-var ip = require("ip");
+//var ip = require("ip");
 
 simpleargs
     .define('p','port', null, 'Port number')
@@ -147,8 +147,12 @@ var sslOptions = {
 
 var httpsServer = https.createServer(sslOptions, app);
 httpsServer.listen(options.port);
-console.log(
+/*console.log(
     lodash.template("https://<%= host %>:<%= port %>".yellow)({ host: ip.address(),port: options.port }));
+*/
+console.log(
+    lodash.template("https://<%= host %>:<%= port %>".yellow)({ host: 'localhost',port: options.port }));
+
 
 
 
