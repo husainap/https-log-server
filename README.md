@@ -2,7 +2,7 @@
 https log server with self signed certificate.
 
 ## Install
-npm install --prefix=./ --reg=https://registry.npmjs.org/ https-log-server@latest
+**_npm install --prefix=./ --reg=https://registry.npmjs.org/ https-log-server@latest_**
 
 ## Usage
 * Server Start (with default options)
