@@ -6,10 +6,12 @@ npm install --prefix=./ --reg=https://registry.npmjs.org/ https-log-server@lates
 
 ## Usage
 * Server Start (with default options)
+
  **_npm  start_**
 
 log server will start with default port 9443 and default log directory as the current install directory.
 * Server Start with port and directory command line options
+
 **_npm  start -- --port 5000 --dir /Users/Husain/Desktop/_**
 
 Server can be started using node command after changing the directory to the https-log-server npm installed directory.
