@@ -2,11 +2,11 @@
 https log server with self signed certificate.
 
 # Install
-npm install https-log-server
+npm install --registry=https://registry.npmjs.org/ https-log-server@latest
 
 ## Usage
 # Server Start:
-nod https-log-server -p port -d path
+node https-log-server -p port -d path
 -p port : port number on which log server should listen (by default 9443)
 -d path : path at which logs recived will get saved. if not specified logs recived will be saved on the current working diretory where the log server executes.
 
