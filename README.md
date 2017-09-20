@@ -3,16 +3,16 @@ https log server with self signed certificate.
 
 ## Installation
 Follow below steps for installing the  **https-log-server** on local machine.
-1. Please install [**nodejs**](**https://nodejs.org/**) if it is not installed.
+1. Please install [**nodejs**](https://nodejs.org/) if it is not installed.
 2. Open terminal program (Mac) or CMD program (Windows)
-3. Change directory to the desired location where **https-log-server** get installed.
+3. Change directory to the desired directory where **https-log-server** gets installed.
 3. Check **nodejs** version by typing "**_node -v_**"
 4. Install **https-log-server** by typing below command on command prompt.
+
    **_npm install --prefix=./ --registry=https://registry.npmjs.org/ https-log-server@latest_**
 
 ## Server Start
 Follow below steps for starting the  **https-log-server** on local machine.
-* Server Start (with default options)
 1. Open terminal program (Mac) or CMD program (Windows)
 2. Change directory to **https-log-server** installed directory (Installation Step 4)
 3. type **_npm  start_** to start the **https-log-server**  with default port number and log path.
@@ -33,6 +33,6 @@ Client should POST the log messages to the log server.
 URL of the POST is  https://server-ip:port/LOGFILENAME/log
 **LOGFILENAME** : is name of the log file that is being created on the server under folder with name as the date of the day.
 example: https://192.168.2.30:9443/ConsoleLogs/log
- 
+
 Log server will create a file with name as "ConsoleLogs.log".
 This log file will be in folder with name as date of the file creation (eg:2017-9-15)
