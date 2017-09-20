@@ -6,7 +6,9 @@ Follow below steps for installing the  **https-log-server** on local machine.
 1. Please install [**nodejs**](https://nodejs.org/) if it is not installed.
 2. Open terminal program (Mac) or CMD program (Windows)
 3. Change directory to the desired directory where **https-log-server** gets installed.
-3. Check **nodejs** version by typing "**_node -v_**"
+3. Check **nodejs** version by typing below command
+
+   "**_node -v_**"
 4. Install **https-log-server** by typing below command on command prompt.
 
    **_npm install --prefix=./ --registry=https://registry.npmjs.org/ https-log-server@latest_**
@@ -15,9 +17,13 @@ Follow below steps for installing the  **https-log-server** on local machine.
 Follow below steps for starting the  **https-log-server** on local machine.
 1. Open terminal program (Mac) or CMD program (Windows)
 2. Change directory to **https-log-server** installed directory (Installation Step 4)
-3. type **_npm  start_** to start the **https-log-server**  with default port number and log path.
+3. Type  below command to start the **https-log-server**  with default port number and log path.
+
+   **_npm  start_**
    **https-log-server** will start with default port **9443** and default log directory as the **https-log-server** installation directory.
-4. type **_npm  start -- --port port_number --dir path_** to start the **https-log-server**  with specific port number and log path.
+4. Type below command to start the **https-log-server**  with specific port number and log path.
+
+   **_npm  start -- --port port_number --dir path_**
    eg: **_npm  start -- --port 5000 --dir /Users/Husain/Desktop/_**
 
 **https-log-server** can also be started using node command after changing the directory to the  **https-log-server** installed directory.
