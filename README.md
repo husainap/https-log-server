@@ -35,6 +35,5 @@ Client should POST the log messages to the log server.
 <br>URL of the POST is  https://<i></i>server-ip:port/**LOGFILENAME**/log
 <br>**LOGFILENAME** : is name of the log file that is being created on the server under folder with name as the date of the day.
 <br>example: **https://<i></i>192.168.2.30:9443/ConsoleLogs/log**
-
 <br>Log server will create a file with name as "ConsoleLogs.log".
 <br>This log file will be in folder with name as date of the file creation (eg:2017-9-15)
