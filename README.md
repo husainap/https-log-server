@@ -16,7 +16,7 @@ Follow below steps for installing the  **https-log-server** on local machine.
 ## Server Start
 Follow below steps for starting the  **https-log-server** on local machine.
 1. Open terminal program (Mac) or CMD program (Windows)
-2. Change directory to **https-log-server** installed directory (** Refer above Installation Step 5**)
+2. Change directory to **https-log-server** installed directory (**Refer above Installation Step 5**)
 3. Type  below command to start the **https-log-server**  with default port number and log path.
 
    **_npm  start_**
