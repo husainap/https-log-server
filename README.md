@@ -20,10 +20,12 @@ Follow below steps for starting the  **https-log-server** on local machine.
 3. Type  below command to start the **https-log-server**  with default port number and log path.
 
    **_npm  start_**
-   **https-log-server** will start with default port **9443** and default log directory as the **https-log-server** installation directory.
+
+   Description: **https-log-server** will start with default port **9443** and default log directory as the **https-log-server** installation directory.
 4. Type below command to start the **https-log-server**  with specific port number and log path.
 
    **_npm  start -- --port port_number --dir path_**
+
    eg: **_npm  start -- --port 5000 --dir /Users/Husain/Desktop/_**
 
 **https-log-server** can also be started using node command after changing the directory to the  **https-log-server** installed directory.
