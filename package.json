@@ -1,6 +1,6 @@
 {
   "name": "https-log-server",
-  "version": "0.0.18",
+  "version": "0.0.20",
   "description": "log server for saving POST messages(console log) from browser console",
   "main": "https-log-server.js",
   "bin": {
@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "cd node_modules/https-log-server && node https-log-server",
-    "postinstall": "cp package.json ../../"
+    "postinstall": "node postinstall.js"
   },
   "dependencies": {
     "openssl-self-signed-certificate":"^1.1.6",
@@ -26,6 +26,7 @@
     "path":"0.12.7",
     "serve-index": "1.9.0",
     "serve-static": "1.12.4",
-    "express":"4.15.4"
+    "express":"4.15.4",
+    "copyfiles": ""
   }
 }
