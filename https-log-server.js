@@ -138,8 +138,6 @@ app.post('/:id/log/', function(req, res){
 app.get('/*', serveIndex(options.dir, { icons: true, view: 'details' }));
 app.get('/*.log', serveStatic(options.dir, { icons: true }));
 
-console.log('selfSigned.key ',selfSigned.key);
-console.log('selfSigned.cert ',selfSigned.cert);
 var sslOptions = {
     key: selfSigned.key,
     cert: selfSigned.cert
