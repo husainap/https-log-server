@@ -1,6 +1,6 @@
 {
   "name": "https-log-server",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "description": "log server for saving POST messages(console log) from browser console",
   "main": "https-log-server.js",
   "bin": {
@@ -8,25 +8,25 @@
   },
   "author": "husain",
   "license": "ISC",
-  "repository" :
-  { "type" : "git",
-    "url" : "https://github.com/husainap/https-log-server"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/husainap/https-log-server"
   },
   "scripts": {
     "start": "cd node_modules/https-log-server && node https-log-server",
     "postinstall": "node postinstall.js"
   },
   "dependencies": {
-    "openssl-self-signed-certificate":"^1.1.6",
-    "q":"1.5.0",
-    "lodash":"4.17.4",
-    "colors":"1.1.2",
-    "simpleargs":"0.0.3",
-    "body-parser":"1.18.1",
-    "path":"0.12.7",
+    "openssl-self-signed-certificate": "^1.1.6",
+    "q": "1.5.0",
+    "lodash": "4.17.4",
+    "colors": "1.1.2",
+    "simpleargs": "0.0.3",
+    "body-parser": "1.18.1",
+    "path": "0.12.7",
     "serve-index": "1.9.0",
     "serve-static": "1.12.4",
-    "express":"4.15.4",
+    "express": "4.15.4",
     "copyfiles": ""
   }
 }
