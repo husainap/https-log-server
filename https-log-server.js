@@ -97,8 +97,8 @@ var Dump = function(baseLogDir, fileName){
             var name = this.name;
             console.log('dump file name=', name );
             var size = 0;
-            console.log("content-type: ", req.headers['content-type']);
-            console.log("content-length: ", req.headers['content-length']);
+            //console.log("content-type: ", req.headers['content-type']);
+            //console.log("content-length: ", req.headers['content-length']);
             var dfd = queue.defer();
             if(req.body && req.body.length ) {
                 fse.outputFile(name, req.body, (err) => {
@@ -113,7 +113,7 @@ var Dump = function(baseLogDir, fileName){
                 });
 
                 req.on('end', () => {
-                    console.log("total size = " + size);
+                    //console.log("total size = " + size);
                     body = Buffer.concat(body);
                     fse.outputFileSync(name, body);
                     dfd.resolve();
