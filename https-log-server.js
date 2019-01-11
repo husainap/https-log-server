@@ -95,7 +95,7 @@ var Dump = function(baseLogDir, fileName){
          */
         write: function(req){
             var name = this.name;
-            console.log('dump file name=', name );
+            //console.log('dump file name=', name );
             var size = 0;
             //console.log("content-type: ", req.headers['content-type']);
             //console.log("content-length: ", req.headers['content-length']);
