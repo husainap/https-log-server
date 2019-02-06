@@ -5,6 +5,7 @@ var http = require('http');
 var https = require('https');
 var fs = require('fs');
 var queue   = require("q");
+var os = require( 'os' );
 var selfSigned = require('openssl-self-signed-certificate');
 var fse = require('fs-extra');
 /**
@@ -134,11 +135,17 @@ var serveStatic = require('serve-static');
 simpleargs
     .define('p','port', null, 'Port number')
     .define('d','dir', null, 'Logs directory')
-    .define('s','https', null, 'https or http server');
+    .define('s','https', null, 'https or http server')
+    .define('c','cert', null, 'https ssl cert file path')
+    .define('k','key', null, 'https ssl key file path')
+    .define('e','password', null, 'https ssl password file path');
 
 var httpsPort = 9443;
 var httpPort = 9000;
 var pwd = process.cwd();
+var sslCert = {key: '',
+               cer: '',
+               passphrase: ''};
 
 var options = simpleargs(process.argv.slice(2));
 if(!options.port) {
@@ -148,6 +155,30 @@ if(!options.dir) {
     options.dir = pwd;
 }
 options.dir = path.resolve(options.dir);
+
+if(options.cert && options.key) {
+    options.key =  path.resolve(options.dir, '../..', options.key);
+    options.cert =  path.resolve(options.dir, '../..', options.cert);
+
+    if(!fs.existsSync(options.key) || !fs.existsSync(options.cert)) {
+        console.log("SSL key and cert files does not exist");
+        process.exit(0)
+    }
+    sslCert.key =  fs.readFileSync(options.key, 'utf8');
+    sslCert.cert =  fs.readFileSync(options.cert, 'utf8');
+    if(options.password) {
+        options.password = path.resolve(options.dir, '../..', options.password);
+        if(!fs.existsSync(options.key)){
+            console.log("SSL password files does not exist");
+            process.exit(0)
+        }
+        sslCert.passphrase = fs.readFileSync(options.password,'utf8');
+    }
+} else {
+  sslCert.key = selfSigned.key;
+  sslCert.cert = selfSigned.cert,
+}
+
 
 console.log("Starting log-server at port: ".green + (""+options.port).red + " log directory ".green +  (""+options.dir).red);
 
@@ -191,8 +222,9 @@ app.get('/*.log', serveStatic(options.dir, { icons: true }));
 app.get('/*/*', serveStatic(options.dir, { icons: true }));
 
 var sslOptions = {
-    key: selfSigned.key,
-    cert: selfSigned.cert
+    key: sslCert.key,
+    cert: sslCert.cert,
+    passphrase : sslCert.passphrase
 };
 
 var httpsServer = https.createServer(sslOptions, app);
@@ -200,8 +232,27 @@ httpsServer.listen(options.port);
 /*console.log(
     lodash.template("https://<%= host %>:<%= port %>".yellow)({ host: ip.address(),port: options.port }));
 */
+
+var getServerIp = function () {
+    var os = require('os');
+    var ifaces = os.networkInterfaces();
+    var values = Object.keys(ifaces).map(function(name) {
+        return ifaces[name];
+    });
+    values = [].concat.apply([], values).filter(function(val){
+        return val.family == 'IPv4' && val.internal == false;
+    });
+
+    return values.length ? values[0].address : '0.0.0.0';
+};
+var ipAddress=getServerIp();
+if(options.cert && options.key) {
+    ipAddress = ipAddress.split('.').join('-').concat('-ip.dishboxes.com');
+} else {
+    ipAddress = 'localhost';
+}
 console.log(
-    lodash.template("https://<%= host %>:<%= port %>".yellow)({ host: 'localhost',port: options.port }));
+    lodash.template("https://<%= host %>:<%= port %>".yellow)({ host: ipAddress,port: options.port }));
 
 
 
