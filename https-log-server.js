@@ -176,7 +176,7 @@ if(options.cert && options.key) {
     }
 } else {
   sslCert.key = selfSigned.key;
-  sslCert.cert = selfSigned.cert,
+  sslCert.cert = selfSigned.cert;
 }
 
 
